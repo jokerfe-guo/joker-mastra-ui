@@ -1,0 +1,12 @@
+name = "joker-mastra-ui"
+main = "./src/worker.ts"
+compatibility_date = "2026-03-08"
+
+[vars]
+AGENT_STREAM_URL = "https://joker-mastra-2.jokul0518.workers.dev/api/agents/reporting-agent/stream"
+
+[assets]
+directory = "./dist"
+binding = "ASSETS"
+not_found_handling = "single-page-application"
+run_worker_first = ["/api/*"]
