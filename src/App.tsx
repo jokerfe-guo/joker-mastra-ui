@@ -19,7 +19,7 @@ type AgentEvent = {
 
 const starterPrompts = ["你好", "请总结今天的工作重点", "帮我写一份周报提纲"];
 const STREAM_API_URL =
-  "https://joker-mastra-2.jokul0518.workers.dev/api/stream";
+  "https://joker-mastra-2.jokul0518.workers.dev/api/agents/reporting-agent/stream";
 
 function createId(prefix: string) {
   return `${prefix}-${crypto.randomUUID()}`;

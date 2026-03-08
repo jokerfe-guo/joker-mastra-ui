@@ -11,7 +11,7 @@ npm run dev
 
 前端会直接请求：
 
-`https://joker-mastra-2.jokul0518.workers.dev/api/stream`
+`https://joker-mastra-2.jokul0518.workers.dev/api/agents/reporting-agent/stream`
 
 ## 部署到 Cloudflare Workers
 
@@ -29,7 +29,7 @@ npm run deploy
 
 ## 配置说明
 
-- 前端请求地址固定为 `https://joker-mastra-2.jokul0518.workers.dev/api/stream`
+- 前端请求地址固定为 `https://joker-mastra-2.jokul0518.workers.dev/api/agents/reporting-agent/stream`
 - 当前 Worker 主要负责托管静态资源
 - 静态资源目录是 `dist`
 - SPA 路由回退通过 `assets.not_found_handling = "single-page-application"` 开启
