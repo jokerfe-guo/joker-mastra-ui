@@ -18,6 +18,8 @@ type AgentEvent = {
 };
 
 const starterPrompts = ["你好", "请总结今天的工作重点", "帮我写一份周报提纲"];
+const STREAM_API_URL =
+  "https://joker-mastra-2.jokul0518.workers.dev/api/stream";
 
 function createId(prefix: string) {
   return `${prefix}-${crypto.randomUUID()}`;
@@ -176,7 +178,7 @@ export default function App() {
     setIsStreaming(true);
 
     try {
-      const response = await fetch("/api/stream", {
+      const response = await fetch(STREAM_API_URL, {
         method: "POST",
         headers: {
           "content-type": "application/json"
@@ -335,8 +337,8 @@ export default function App() {
             <p className="eyebrow">Cloudflare Workers + React + Vite</p>
             <h1>Agent 流式调试台</h1>
             <p className="hero-text">
-              页面通过同源的 <code>/api/stream</code> 调用 Worker，再由 Worker
-              代理到远端 Mastra agent 的 SSE 接口。
+              页面会直接请求远端的 <code>{STREAM_API_URL}</code>，并在当前窗口里展示
+              agent 的 SSE 流式输出。
             </p>
           </div>
 
